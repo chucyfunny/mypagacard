@@ -1,0 +1,10 @@
+// Quantumult X Rewrite Script
+// 拦截 PUT 请求并防止重定向到美国
+
+[rewrite_local]
+// 拦截 PUT 请求到特定的 URL，并执行外部脚本
+^https:\/\/cart\.production\.store-web\.dynamics\.com\/cart\/v1\.0\/cart\/loadCart\?cartType=consumer&appId=StoreWeb$ script-path=https://raw.githubusercontent.com/chucyfunny/mypagacard/main/Xbox.js, requires-body=true, timeout=10
+
+[mitm]
+// 信任以下主机名
+hostname = cart.production.store-web.dynamics.com
